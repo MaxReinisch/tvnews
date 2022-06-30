@@ -58,7 +58,7 @@ def parseEntities(entities):
     if len(entities) == 0:
         return []
 
-    return [e[0] for e in Counter(entities).most_common(3)]
+    return [e for e in Counter(entities)]
 
 def getOpenCalaisResponse(article, calais_token):
     CALAIS_HEADER = {'X-AG-Access-Token' : calais_token, 'Content-Type' : 'text/raw', 'outputformat' : 'application/json'}
